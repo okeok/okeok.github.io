@@ -1,13 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>Test</title>
 </head>
+
 <body>
-    
+    <div class="main">
+        <div class="header">
+            <div class="top">
+                <div class="title">Donations</div>
+            </div>
+            <div class="bottom">
+                <div class="search">
+                    <input class="input" type="text" name="" placeholder="Search" id="">
+                </div>
+                <select class="select">
+                    <option selected>All statuses</option>
+                    <option>Statuse 1</option>
+                    <option>Statuse 2</option>
+                </select>
+            </div>
+        </div>
+        <div class="body-grid">
+            <div class="nav">
+                <a href="#" class="elem">
+                    <img src="img/repeat.svg" alt="" class="icon">
+                    <div>Change amount</div>
+                </a>
+                <a href="#" class="elem">
+                    <img src="img/wallet.svg" alt="" class="icon">
+                    <div>Change payment method</div>
+                </a>
+                <a href="#" class="elem active">
+                    <img src="img/calendar.svg" alt="" class="icon">
+                    <div>Change date</div>
+                </a>
+                <a href="#" class="elem">
+                    <img src="img/x-circle.svg" alt="" class="icon">
+                    <div>Cancel recurring</div>
+                </a>
+            </div>
+            <div class="info">
+                <div class="top">
+                    <div class="left">
+                        <div class="title">
+                            <img class="icon" src="img/dollar-sign.svg" alt="">
+                            <div>
+                                Donation
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="first">
+                                $20.60 USD
+                            </div>
+                            <div class="second">
+                                ≈ €17.92 EUR
+                            </div>
+                        </div>
+                    </div>
+                    <div class="id">
+                        <div class="title">ID</div>
+                        <div class="value">
+                            <div>TYNY694Y</div>
+                            <button class="copy"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="title">Status</div>
+                        <div class="text">
+                            <img class="icon" src="img/check.svg" alt="">
+                            <div>Succeeded</div>
+                        </div>
+                    </div>
+                    <div class="about">
+                        <div class="title">Supporter</div>
+                        <a href="#" class="link">Charlotte Ann</a>
+                    </div>
+                    <div class="about">
+                        <div class="title">Campaign</div>
+                        <a href="#" class="link">Heart walk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <div class="tabs-wrap">
+                    <div class="tabs">
+                        <button class="tab active">Behavior</button>
+                        <button class="tab">Appearance</button>
+                        <button class="tab">Custom Fields</button>
+                        <button class="tab">Questions</button>
+                        <button class="tab">URL Control</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="block gray-inputs">
+                        <div class="cell">Designation</div>
+                        <div class="cell">
+                            <select class="select">
+                                <option selected>Match Checkout Setting</option>
+                                <option>Setting 1</option>
+                                <option>Setting 2</option>
+                                <option>Setting 1</option>
+                                <option>Setting 2</option>
+                            </select>
+                        </div>
+                        <div class="cell">Goal</div>
+                        <div class="cell">
+                            <div class="goal">
+                                <input class="gray-input" type="text" value="$10.00">
+                                <select class="select">
+                                    <option selected>USD</option>
+                                    <option>EUR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block switchers">
+                        <div class="cell">Default Amount</div>
+                        <div class="cell">
+                            <div class="radio-wrap">
+                                <input type="radio" class="radio" id="match" name="radio_setting" value="match">
+                                <label for="match"></label>
+                                <span>Match Checkout Setting</span>
+                            </div>
+                            <div class="radio-wrap">
+                                <input type="radio" class="radio" id="customize" name="radio_setting" value="customize" checked>
+                                <label for="customize"></label>
+                                <span>Customize</span>
+                            </div>
+                            <div class="check-wrap">
+                                <input type="checkbox" class="checkbox" id="allow" name="checkbox_setting" value="">
+                                <label for="allow"></label>
+                                <span>Allow donor to change default currency</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cell">Border size</div>
+                        <div class="cell">
+                            <div class="range-wrap">
+                                <input class="range" type="range" min="0" max="100" value="65" />
+                                <span class="range-output">2px</span>
+                            </div>
+                        </div>
+                        <div class="cell">Border radius</div>
+                        <div class="cell">
+                            <div class="range-wrap">
+                                <input class="range" type="range" min="0" max="100" value="65" />
+                                <span class="range-output">15px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <button class="button save">Save changes</button>
+                    <button class="button cancel">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+        <script src="js/main.js"></script>
 </body>
+
 </html>
