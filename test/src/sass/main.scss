@@ -24,8 +24,11 @@ $font-code: 'Source Code Pro', monospace;
 
 $font-big: (
     size: 24px,
-    height: 32px
+    height: 32px,
+    size-tablet: 18px,
+    height-tablet: 24px,
 );
+
 
 $font-regular: (
     size: 16px,
@@ -37,13 +40,17 @@ $font-little: (
     height: 20px
 );
 
+$padding-sides-lg: 31px;
+$padding-sides-mb: 19px;
+
 $breakpoint-desktop: 1200px;
 $breakpoint-tablet: 992px;
 $breakpoint-mobile: 768px;
 
 * {
     box-sizing: border-box;
-    &:focus-visible{
+
+    &:focus-visible {
         outline-color: $green;
         z-index: 2;
         position: relative;
@@ -76,10 +83,10 @@ select {
 
     text-decoration: none;
     transition: .1s opacity;
-    display: block;
-    width: max-content;
+    display: inline-block;
     position: relative;
-    &::before{
+
+    &::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -88,6 +95,7 @@ select {
         left: 0;
         background: $link;
     }
+
     &:hover {
         opacity: 0.7;
     }
@@ -97,6 +105,18 @@ select {
     margin: 53px auto;
     max-width: 1264px;
     padding: 0 20px;
+
+    @media (max-width: $breakpoint-desktop) {
+        margin: 40px auto 60px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        margin: 32px auto 60px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        margin: 20px auto 60px;
+    }
 }
 
 .header {
@@ -107,27 +127,54 @@ select {
     overflow: hidden;
 
     .top {
-        padding: 27px 31px;
+        padding: 27px $padding-sides-lg;
+
+        @media (max-width: $breakpoint-desktop) {
+            padding: 24px $padding-sides-mb;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: $padding-sides-mb;
+        }
 
         .title {
             font-size: map-get($font-big, size);
             line-height: map-get($font-big, height);
+
+            @media (max-width: $breakpoint-tablet) {
+                font-size: map-get($font-big, size-tablet);
+                line-height: map-get($font-big, height-tablet);
+            }
         }
+
     }
 
     .bottom {
         background: $gray;
         display: flex;
         align-items: center;
-        padding: 15px 31px;
+        padding: 15px $padding-sides-lg 16px $padding-sides-lg;
         border-top: $border;
+
+        @media (max-width: $breakpoint-desktop) {
+            padding: 15px $padding-sides-mb 16px $padding-sides-mb;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: initial;
+        }
 
         .search {
             width: max-content;
+            max-width: 100%;
             position: relative;
+
             .input {
                 display: block;
                 width: 336px;
+                max-width: 100%;
                 height: 40px;
                 border: $border;
                 border-radius: $border-radius-block;
@@ -139,9 +186,11 @@ select {
                 &::placeholder {
                     color: $text-gray;
                 }
-                &:focus-visible{
+
+                &:focus-visible {
                     z-index: 0;
                 }
+
             }
 
             &::after {
@@ -171,6 +220,20 @@ select {
             background-repeat: no-repeat;
             background-position: right center;
             background-size: 24px 24px;
+
+            &:focus-visible {
+                outline-color: $text-dark;
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                margin: 0 0 0 20px;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                margin: 0 0 16px 0;
+                width: max-content;
+                max-width: 100%;
+            }
         }
     }
 }
@@ -180,9 +243,23 @@ select {
     display: grid;
     gap: 25px 24px;
     grid-template-columns: auto 264px;
-    grid-template-areas:
-        "a c"
+    grid-template-areas: "a c"
         "b c";
+
+    @media (max-width: $breakpoint-desktop) {
+        margin: 16px 0 0 0;
+        gap: 16px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-areas: "a c"
+            "b b";
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 100%;
+        grid-template-areas: initial;
+    }
 
     .info,
     .nav,
@@ -195,10 +272,36 @@ select {
     }
 
     .info {
+        grid-area: a;
+
+        @media (max-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: column;
+            max-height: 240px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            grid-area: initial;
+            max-height: initial;
+        }
+
         .top {
-            padding: 23px 31px 24px 31px;
+            padding: 23px $padding-sides-lg 24px $padding-sides-lg;
             display: flex;
             justify-content: space-between;
+
+            @media (max-width: $breakpoint-desktop) {
+                padding: $padding-sides-mb $padding-sides-mb $padding-sides-mb + 1px $padding-sides-mb;
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                align-items: center;
+                height: 100%;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                display: block;
+            }
 
             .left {
                 width: max-content;
@@ -218,6 +321,11 @@ select {
                         font-size: map-get($font-big, size);
                         line-height: map-get($font-big, height);
                         color: $green;
+
+                        @media (max-width: $breakpoint-tablet) {
+                            font-size: map-get($font-big, size-tablet);
+                            line-height: map-get($font-big, height-tablet);
+                        }
                     }
 
                     .second {
@@ -230,6 +338,11 @@ select {
 
             .id {
                 font-family: $font-code;
+                margin: 0 0 0 24px;
+
+                @media (max-width: $breakpoint-mobile) {
+                    margin: 20px 0 0 0;
+                }
 
                 .title {
                     line-height: 20px;
@@ -260,8 +373,20 @@ select {
         .bottom {
             background: $gray;
             border-top: $border;
-            padding: 16px 31px 15px 31px;
+            padding: 16px $padding-sides-lg 15px $padding-sides-lg;
             display: flex;
+
+            @media (max-width: $breakpoint-desktop) {
+                padding: 16px $padding-sides-mb 15px $padding-sides-mb;
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                margin-top: auto;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                display: block;
+            }
 
             .title {
                 font-size: map-get($font-little, size);
@@ -281,15 +406,30 @@ select {
             }
 
             .about {
-                padding: 0 31px 0 32px;
+                padding: 0 $padding-sides-lg;
                 border-left: $border;
+
+                @media (max-width: $breakpoint-desktop) {
+                    padding: 0 $padding-sides-mb;
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    border: initial;
+                    padding: initial;
+                    margin: 16px 0 0 0;
+                }
             }
+
         }
     }
 
     .nav {
         grid-area: c;
         height: max-content;
+
+        @media (max-width: $breakpoint-mobile) {
+            grid-area: initial;
+        }
 
         .elem {
             border-top: $border;
@@ -306,7 +446,7 @@ select {
                 background: $gray;
             }
 
-            &:focus-visible{
+            &:focus-visible {
                 outline: none;
                 text-decoration: underline $green;
             }
@@ -318,6 +458,12 @@ select {
     }
 
     .settings {
+        grid-area: b;
+
+        @media (max-width: $breakpoint-mobile) {
+            grid-area: initial;
+        }
+
         .tabs-wrap {
             overflow: auto;
 
@@ -329,6 +475,10 @@ select {
             display: flex;
             flex-wrap: nowrap;
             margin-bottom: $border-width ;
+
+            @media (max-width: $breakpoint-desktop) {
+                padding: $padding-sides-mb $padding-sides-mb 0 $padding-sides-mb;
+            }
 
             .tab {
                 cursor: pointer;
@@ -367,17 +517,42 @@ select {
         }
 
         .content {
-            padding: 40px 31px;
+            padding: 40px $padding-sides-lg;
             display: grid;
             gap: 24px;
+
+            @media (max-width: $breakpoint-desktop) {
+                padding: 32px $padding-sides-mb;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                padding: 20px $padding-sides-mb;
+                gap: 20px;
+                max-width: 500px;
+            }
 
             .block {
                 display: grid;
                 grid-template-columns: 153px auto;
                 gap: 24px 16px;
 
+                @media (max-width: $breakpoint-desktop) {
+                    gap: 16px;
+                }
+                @media (max-width: $breakpoint-mobile) {
+                    gap: 12px;
+                }
+
                 &.gray-inputs {
                     grid-template-columns: 153px 296px;
+
+                    @media (max-width: $breakpoint-mobile) {
+                        grid-template-columns: 100%;
+                    }
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    grid-template-columns: 100%;
                 }
             }
 
@@ -387,6 +562,7 @@ select {
                 border-radius: 6px;
                 font-size: map-get($font-regular, size);
                 line-height: map-get($font-regular, height);
+                color: $text-dark;
                 background: $white;
                 border: $border-dark;
                 width: 100%;
@@ -403,32 +579,40 @@ select {
                     justify-content: flex-end;
                     display: flex;
                     align-items: center;
+                    @media (max-width: $breakpoint-mobile) {
+                        display: block;
+                    }
                 }
             }
 
-            .switchers{
+            .switchers {
                 .cell {
-                align-items: flex-start;
+                    align-items: flex-start;
                 }
             }
 
-            .radio-wrap{
+            .radio-wrap {
                 display: flex;
                 align-items: center;
                 margin: 0 0 16px 0;
-                &:last-child{ 
+
+                &:last-child {
                     margin: initial;
                 }
-                span{
+
+                span {
                     display: block;
                 }
             }
 
-            .check-wrap{
+            .check-wrap {
                 display: flex;
                 align-items: center;
                 margin: 24px 0 8px 0;
-                span{
+                @media (max-width: $breakpoint-mobile) {
+                    margin: initial;
+                }
+                span {
                     display: block;
                 }
             }
@@ -528,11 +712,18 @@ select {
                 background-image: url('../img/checkbox-focus.svg');
             }
 
-            .range-wrap{
+            .range-wrap {
                 display: flex;
                 align-items: center;
-                span{
+
+                span {
                     display: block;
+                }
+
+                @media (max-width: $breakpoint-mobile) {
+                    flex-direction: column;
+                    align-items: initial;
+                    gap: 8px;
                 }
             }
 
@@ -546,6 +737,9 @@ select {
                 background-image: linear-gradient($green, $green);
                 background-size: 70% 100%;
                 background-repeat: no-repeat;
+                @media (max-width: $breakpoint-mobile) {
+                    width: 100%;
+                }
             }
 
             .range::-webkit-slider-thumb {
@@ -614,40 +808,58 @@ select {
 
     .footer {
         border-top: $border;
-        padding: 23px 31px;
+        padding: 23px $padding-sides-lg;
         background: $pink;
         display: flex;
-            .button{
-                cursor: pointer;
-                padding: 11px 24px;
-                border-radius: 8px;
-                display: block;
-                font-size: map-get($font-regular, size);
-                line-height: map-get($font-regular, height);
-                
-                &.save{
-                    background: $green;
-                    border: $green;
-                    color: $white;
-                    transition: .1s opacity;
-                    &:hover{
-                        opacity: 0.7;
-                    }
-                    &:focus-visible{
-                        outline-color: $text-dark;
-                    }
-                }
-                &.cancel{
-                    background: $white;
-                    border: $border-dark;
-                    margin: 0 0 0 16px;
-                    transition: .1s background;
-                    &:hover{
-                        background: $gray;
-                    }
+
+        @media (max-width: $breakpoint-desktop) {
+            padding: $padding-sides-mb $padding-sides-mb $padding-sides-mb + 1px $padding-sides-mb;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            justify-content: space-between;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 11px 24px;
+            border-radius: 8px;
+            display: block;
+            font-size: map-get($font-regular, size);
+            line-height: map-get($font-regular, height);
+
+            @media (max-width: $breakpoint-mobile) {
+                padding: 7px 16px;
+            }
+
+            &.save {
+                background: $green;
+                border: $green;
+                color: $white;
+                transition: .1s opacity;
+
+                &:hover {
+                    opacity: 0.7;
                 }
 
+                &:focus-visible {
+                    outline-color: $text-dark;
+                }
             }
+
+            &.cancel {
+                background: $white;
+                border: $border-dark;
+                color: $text-dark;
+                margin: 0 0 0 16px;
+                transition: .1s background;
+
+                &:hover {
+                    background: $gray;
+                }
+            }
+
+        }
 
     }
 }
