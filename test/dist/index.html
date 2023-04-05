@@ -23,7 +23,7 @@
                 <div class="search">
                     <input class="input" type="text" name="" placeholder="Search" id="">
                 </div>
-                <select class="select">
+                <select class="select" aria-label="Statuses">
                     <option selected>All statuses</option>
                     <option>Statuse 1</option>
                     <option>Statuse 2</option>
@@ -32,19 +32,19 @@
         </div>
         <div class="body-grid">
             <div class="nav">
-                <a href="#" class="elem">
+                <a href="#" class="elem" role="button">
                     <img src="img/repeat.svg" alt="" class="icon">
                     <div>Change amount</div>
                 </a>
-                <a href="#" class="elem">
+                <a href="#" class="elem" role="button">
                     <img src="img/wallet.svg" alt="" class="icon">
                     <div>Change payment method</div>
                 </a>
-                <a href="#" class="elem active">
+                <a href="#" class="elem active" role="button">
                     <img src="img/calendar.svg" alt="" class="icon">
                     <div>Change date</div>
                 </a>
-                <a href="#" class="elem">
+                <a href="#" class="elem" role="button">
                     <img src="img/x-circle.svg" alt="" class="icon">
                     <div>Cancel recurring</div>
                 </a>
@@ -58,7 +58,7 @@
                                 Donation
                             </div>
                         </div>
-                        <div class="value">
+                        <div tabindex="0" aria-label="Donation: $20.60 USD" class="value">
                             <div class="first">
                                 $20.60 USD
                             </div>
@@ -71,7 +71,7 @@
                         <div class="title">ID</div>
                         <div class="value">
                             <div>TYNY694Y</div>
-                            <button class="copy"></button>
+                            <button aria-label="ID TYNY694Y copy" class="copy"></button>
                         </div>
                     </div>
                 </div>
@@ -85,11 +85,11 @@
                     </div>
                     <div class="about">
                         <div class="title">Supporter</div>
-                        <a href="#" class="link">Charlotte Ann</a>
+                        <a href="#" aria-label="Supporter Charlotte Ann" class="link">Charlotte Ann</a>
                     </div>
                     <div class="about">
                         <div class="title">Campaign</div>
-                        <a href="#" class="link">Heart walk</a>
+                        <a href="#" aria-label="Campaign Heart walk" class="link">Heart walk</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <div class="block gray-inputs">
                         <div class="cell">Designation</div>
                         <div class="cell">
-                            <select class="select">
+                            <select class="select" aria-label="Designation">
                                 <option selected>Match Checkout Setting</option>
                                 <option>Setting 1</option>
                                 <option>Setting 2</option>
@@ -118,8 +118,8 @@
                         <div class="cell">Goal</div>
                         <div class="cell">
                             <div class="goal">
-                                <input class="gray-input" type="text" value="$10.00">
-                                <select class="select">
+                                <input class="gray-input" type="text" value="$10.00" aria-label="Goal">
+                                <select class="select" aria-label="Currency">
                                     <option selected>USD</option>
                                     <option>EUR</option>
                                 </select>
@@ -130,17 +130,17 @@
                         <div class="cell">Default Amount</div>
                         <div class="cell">
                             <div class="radio-wrap">
-                                <input type="radio" class="radio" id="match" name="radio_setting" value="match">
+                                <input type="radio" class="radio" id="match" name="radio_setting" value="match" aria-label="Default Amount: Match Checkout Setting">
                                 <label for="match"></label>
                                 <span>Match Checkout Setting</span>
                             </div>
                             <div class="radio-wrap">
-                                <input type="radio" class="radio" id="customize" name="radio_setting" value="customize" checked>
+                                <input type="radio" class="radio" id="customize" name="radio_setting" value="customize" aria-label="Default Amount: Customize" checked>
                                 <label for="customize"></label>
                                 <span>Customize</span>
                             </div>
                             <div class="check-wrap">
-                                <input type="checkbox" class="checkbox" id="allow" name="checkbox_setting" value="">
+                                <input type="checkbox" class="checkbox" id="allow" name="checkbox_setting" value="" aria-label="Customize: Allow donor to change default currency">
                                 <label for="allow"></label>
                                 <span>Allow donor to change default currency</span>
                             </div>
@@ -150,14 +150,14 @@
                         <div class="cell">Border size</div>
                         <div class="cell">
                             <div class="range-wrap">
-                                <input class="range" type="range" min="0" max="100" value="65" />
+                                <input class="range" type="range" min="0" max="100" value="65" aria-label="Border size" />
                                 <span class="range-output">2px</span>
                             </div>
                         </div>
                         <div class="cell">Border radius</div>
                         <div class="cell">
                             <div class="range-wrap">
-                                <input class="range" type="range" min="0" max="100" value="65" />
+                                <input class="range" type="range" name="radius" min="0" max="100" value="65" aria-label="Border radius" />
                                 <span class="range-output">15px</span>
                             </div>
                         </div>

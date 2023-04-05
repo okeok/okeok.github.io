@@ -64,7 +64,6 @@ select {
     appearance: none;
 }
 
-
 .icon {
     width: 18px;
     display: flex;
@@ -126,7 +125,6 @@ select {
         .search {
             width: max-content;
             position: relative;
-
             .input {
                 display: block;
                 width: 336px;
@@ -140,6 +138,9 @@ select {
 
                 &::placeholder {
                     color: $text-gray;
+                }
+                &:focus-visible{
+                    z-index: 0;
                 }
             }
 

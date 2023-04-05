@@ -441,6 +441,9 @@ select {
 .header .bottom .search .input::placeholder {
   color: #6C6D6F;
 }
+.header .bottom .search .input:focus-visible {
+  z-index: 0;
+}
 .header .bottom .search::after {
   content: "";
   background-image: url("../img/search.svg");
