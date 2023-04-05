@@ -41,11 +41,13 @@ $breakpoint-desktop: 1200px;
 $breakpoint-tablet: 992px;
 $breakpoint-mobile: 768px;
 
-$font-regular-size: 24px;
-$font-regular-line-height: 25px;
-
 * {
     box-sizing: border-box;
+    &:focus-visible{
+        outline-color: $green;
+        z-index: 2;
+        position: relative;
+    }
 }
 
 body {
@@ -303,6 +305,11 @@ select {
                 background: $gray;
             }
 
+            &:focus-visible{
+                outline: none;
+                text-decoration: underline $green;
+            }
+
             &.active {
                 background: $gray;
             }
@@ -538,9 +545,6 @@ select {
                 background-image: linear-gradient($green, $green);
                 background-size: 70% 100%;
                 background-repeat: no-repeat;
-                &:focus-visible{
-                    outline-color: $green;
-                }
             }
 
             .range::-webkit-slider-thumb {
@@ -627,6 +631,9 @@ select {
                     transition: .1s opacity;
                     &:hover{
                         opacity: 0.7;
+                    }
+                    &:focus-visible{
+                        outline-color: $text-dark;
                     }
                 }
                 &.cancel{

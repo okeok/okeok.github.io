@@ -341,6 +341,11 @@ template {
 * {
   box-sizing: border-box;
 }
+*:focus-visible {
+  outline-color: #2EB670;
+  z-index: 2;
+  position: relative;
+}
 
 body {
   background: #F7F7F7;
@@ -574,6 +579,11 @@ select {
 .body-grid .nav .elem:hover {
   background: #FAFAFA;
 }
+.body-grid .nav .elem:focus-visible {
+  outline: none;
+  -webkit-text-decoration: underline #2EB670;
+          text-decoration: underline #2EB670;
+}
 .body-grid .nav .elem.active {
   background: #FAFAFA;
 }
@@ -774,9 +784,6 @@ select {
   background-size: 70% 100%;
   background-repeat: no-repeat;
 }
-.body-grid .settings .content .range:focus-visible {
-  outline-color: #2EB670;
-}
 .body-grid .settings .content .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 19px;
@@ -854,6 +861,9 @@ select {
 }
 .body-grid .footer .button.save:hover {
   opacity: 0.7;
+}
+.body-grid .footer .button.save:focus-visible {
+  outline-color: #2F2F30;
 }
 .body-grid .footer .button.cancel {
   background: #FFFFFF;
