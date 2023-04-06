@@ -686,10 +686,6 @@ select {
                 background-image: url('../img/radio-focus.svg');
             }
 
-            .radio:focus+label::before {
-                background-image: url('../img/radio-focus.svg');
-            }
-
             .checkbox {
                 position: absolute;
                 z-index: -1;
@@ -725,6 +721,10 @@ select {
             }
 
             .checkbox:focus-visible+label::before {
+                background-image: url('../img/checkbox-focus.svg');
+            }
+
+            .checkbox:focus+label::before {
                 background-image: url('../img/checkbox-focus.svg');
             }
 
