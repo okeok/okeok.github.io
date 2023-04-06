@@ -1020,24 +1020,25 @@ select {
 }
 .body-grid .settings .content .range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 19px;
-  width: 19px;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
   background: #2EB670;
   cursor: pointer;
   -webkit-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
+  border: 1px solid #2EB670;
 }
 .body-grid .settings .content .range::-moz-range-thumb {
   -moz-appearance: none;
-  height: 19px;
-  width: 19px;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
   background: #2EB670;
   cursor: pointer;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
-  border: none;
+  border: 1px solid #2EB670;
 }
 .body-grid .settings .content .range::-ms-thumb {
   appearance: none;

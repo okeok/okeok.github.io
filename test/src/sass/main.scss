@@ -752,23 +752,24 @@ select {
 
             .range::-webkit-slider-thumb {
                 -webkit-appearance: none;
-                height: 19px;
-                width: 19px;
+                height: 18px;
+                width: 18px;
                 border-radius: 50%;
                 background: $green;
                 cursor: pointer;
                 transition: background .3s ease-in-out;
+                border: 1px solid $green;
             }
 
             .range::-moz-range-thumb {
                 -moz-appearance: none;
-                height: 19px;
-                width: 19px;
+                height: 18px;
+                width: 18px;
                 border-radius: 50%;
                 background: $green;
                 cursor: pointer;
                 transition: background .3s ease-in-out;
-                border: none;
+                border: 1px solid $green;
             }
 
             .range::-ms-thumb {
