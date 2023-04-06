@@ -360,11 +360,12 @@ select {
                     background: none;
                     background-image: url(../img/copy.svg);
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: 100%;
                     width: 18px;
                     height: 18px;
                     display: block;
                     margin: 0 0 0 8px;
+                    padding: 0;
                     cursor: pointer;
                 }
             }
@@ -475,6 +476,8 @@ select {
             display: flex;
             flex-wrap: nowrap;
             margin-bottom: $border-width ;
+            width: 100%;
+            min-width: max-content;
 
             @media (max-width: $breakpoint-desktop) {
                 padding: $padding-sides-mb $padding-sides-mb 0 $padding-sides-mb;
@@ -512,6 +515,11 @@ select {
                     border-color: $border-color;
                     margin-bottom: - $border-width ;
                     padding: 13px 15px 12px 16px;
+                    @media (max-width: $breakpoint-mobile) {
+                        border-color: transparent;
+                        margin-bottom: 0;
+                        padding: 13px 15px 11px 16px;
+                    }
                 }
             }
         }

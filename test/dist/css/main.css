@@ -653,11 +653,12 @@ select {
   background: none;
   background-image: url(../img/copy.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   width: 18px;
   height: 18px;
   display: block;
   margin: 0 0 0 8px;
+  padding: 0;
   cursor: pointer;
 }
 .body-grid .info .bottom {
@@ -759,6 +760,9 @@ select {
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 1px;
+  width: 100%;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 @media (max-width: 1200px) {
   .body-grid .settings .tabs {
@@ -796,6 +800,13 @@ select {
   border-color: #DBDCDE;
   margin-bottom: -1px;
   padding: 13px 15px 12px 16px;
+}
+@media (max-width: 768px) {
+  .body-grid .settings .tabs .tab:hover {
+    border-color: transparent;
+    margin-bottom: 0;
+    padding: 13px 15px 11px 16px;
+  }
 }
 .body-grid .settings .content {
   padding: 40px 31px;
