@@ -682,6 +682,14 @@ select {
                 background-image: url('../img/radio-focus.svg');
             }
 
+            .radio:focus+label::before {
+                background-image: url('../img/radio-focus.svg');
+            }
+
+            .radio:focus+label::before {
+                background-image: url('../img/radio-focus.svg');
+            }
+
             .checkbox {
                 position: absolute;
                 z-index: -1;

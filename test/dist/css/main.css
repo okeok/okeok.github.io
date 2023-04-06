@@ -953,6 +953,12 @@ select {
 .body-grid .settings .content .radio:focus-visible + label::before {
   background-image: url("../img/radio-focus.svg");
 }
+.body-grid .settings .content .radio:focus + label::before {
+  background-image: url("../img/radio-focus.svg");
+}
+.body-grid .settings .content .radio:focus + label::before {
+  background-image: url("../img/radio-focus.svg");
+}
 .body-grid .settings .content .checkbox {
   position: absolute;
   z-index: -1;
