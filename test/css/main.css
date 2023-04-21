@@ -729,26 +729,6 @@ select {
     position: relative;
 }
 
-
-
-/*@media (max-width: 767px) {
-    .card__img {
-        position: relative;
-        background-position: 26px 27px;
-        border: 2px solid #98ABD9;
-        margin: auto;
-    }
-
-    .card__img::before {
-        top: 138px;
-        left: -124px;
-        border-radius: inherit;
-        border: 2px solid #98ABD9;
-        z-index: -1;
-    }
-
-}*/
-
 /*inputs*/
 
 .inputs {
@@ -851,6 +831,7 @@ select {
     outline: none;
     background: #FFF;
     border: 1px solid #0432D3;
+    border-radius: 0px;
 }
 
 .inputs__input::-webkit-input-placeholder {
