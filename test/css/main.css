@@ -387,6 +387,9 @@ template {
 }
 
 /*safari inputs fix*/
+input{
+    border-radius: 0;
+}
 input:not([type=checkbox]):not([type=radio]),
 textarea, 
 select {
@@ -831,7 +834,6 @@ select {
     outline: none;
     background: #FFF;
     border: 1px solid #0432D3;
-    border-radius: 0px;
 }
 
 .inputs__input::-webkit-input-placeholder {
